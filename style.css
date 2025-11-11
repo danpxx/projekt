@@ -1,0 +1,272 @@
+/* ===== VARIABLES ===== */
+:root {
+  --primary-color: #007bff;
+  --text-color: #333;
+  --bg-color: #fff;
+  --gray: #777;
+  --padding: 16px;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px; /* mobile first */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  background-color: white;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+.auth a {
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signin {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.signup {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  text-align: center;
+  padding: 40px var(--padding);
+}
+
+.about h2 {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.about p {
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+/* ===== TEAM SECTION ===== */
+.team {
+  padding: 40px var(--padding);
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.team-desc {
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.member {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.member img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.member h3 {
+  color: black;
+  font-size: 20px;
+}
+
+.role {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.desc {
+  color: rgba(0,0,0,0.5);
+}
+
+/* ===== JOIN US SECTION ===== */
+.join-us {
+  display: flex;
+  flex-direction: column;
+}
+
+.join-text {
+  background-color: white;
+  color: var(--gray);
+  padding: 40px var(--padding);
+  text-align: center;
+}
+
+.join-text h2 {
+  color: black;
+  margin-bottom: 10px;
+}
+
+.btn-join {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-join:hover {
+  background-color: #005fcc;
+}
+
+.join-image img {
+  width: 100%;
+  display: block;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px var(--padding);
+  border-top: 1px solid #ccc;
+}
+
+.footer-left img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-column h4 {
+  color: black;
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  display: block;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--primary-color);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .join-us {
+    flex-direction: row;
+  }
+
+  .join-text, .join-image {
+    flex: 1;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-right {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about h2, .team h2, .join-text h2 {
+    font-size: 28px;
+  }
+
+  .member h3 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
